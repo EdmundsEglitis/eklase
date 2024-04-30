@@ -1,8 +1,29 @@
 body{
     margin: 0;
     background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
 }
+footer{
+background-image: linear-gradient(#121212, rgb(32, 31, 31));
+text-align: center;
+color: white;
+overflow-x: hidden;
+width: 100vw;
+height: 90px;
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+margin-top: auto;
+}
+.footer-a{
+    text-decoration: none;
+    color: white;
+}
+
 .item-0{
     display: flex;
     justify-content: center;
@@ -15,6 +36,7 @@ body{
     border-radius: 10px;
     border-width: 2px;
     transition:0.3s;
+    display: inline-block;
 }
 .item-1{
     display: flex;
@@ -28,6 +50,7 @@ body{
     border-radius: 10px;
     border-width: 2px;
     transition:0.3s;
+    display: inline-block;
 }
 .item-2{
     display: flex;
@@ -41,6 +64,7 @@ body{
     border-radius: 10px;
     border-width: 2px;
     transition:0.3s;
+    display: inline-block;
 }
 .item-3{
     display: flex;
@@ -54,6 +78,7 @@ body{
     border-radius: 10px;
     border-width: 2px;
     transition:0.3s;
+    display: inline-block;
 }
 .item-4{
     display: flex;
@@ -66,6 +91,28 @@ body{
     border-radius: 10px;
     border-width: 2px;
     transition:0.3s;
+    
+}
+.img-0{
+    width: 18vw;
+    height: 8vw;
+    filter: invert(50%);
+    
+}
+.img-1{
+    width: 18vw;
+    height: 8vw;
+    filter: invert(50%);
+}
+.img-2{
+    width: 10vw;
+    height: 4vw;
+    filter: invert(50%);
+}
+.img-3{
+    width: 10vw;
+    height: 4vw;
+    filter: invert(50%);
 }
 .item-0:hover{
     filter: brightness(150%)
@@ -89,18 +136,13 @@ body{
     justify-content: center;
     margin-top: 3vw;
     width: 100%;
-
     display: grid;
     grid-gap: 2vw;
+
     grid-template-columns: 30vw 30vw 30vw;
     grid-template-rows: 12vw 12vw 12vw;
 }
 
-.login{
-    display: block;
-    color: white;
-    font-size:25px;
-}
 .login-button{
     background-color: #BB86FC;
     border: none;
@@ -115,26 +157,57 @@ body{
     text-decoration: none;
     cursor: pointer;
 }
+
 .login-button:hover {opacity: 1}
+
+.login-label{
+    justify-items: center;
+
+    display: flex; /* Change this to flex */
+        flex-direction: column; /* Stack the children vertically */
+        justify-content: center; /* Vertically center the items */
+        align-items: center; /* Horizontally center the items */
+}
+
+.login-input{
+    text-align: center;
+    height:15px;
+}
+
+.login-form{
+    display: flex; /* Change this to flex */
+    flex-direction: column; /* Stack the children vertically */
+    justify-content: center; /* Vertically center the items */
+    align-items: center; /* Horizontally center the items */
+}
+.login{
+
+    color: white;
+    font-size:20px;
+}
+
     header {
         background-color: #353535;
-        height: 5vw;
+        height: 60px;
         position: fixed;
         width: 100%;
         top: 0;
         left: 0;
         z-index: 4;
         gap: 20px;
-        display: inline-block;
+
 }
 .nav-container{
+    height: 60px;
     width:100vw;
     display: grid;
     grid-template-columns: 10vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw 10vw;
-    grid-template-rows: 5vw;
+    grid-template-rows: 60px;
+    
 }
 .nav-right{
-    height: 5vw;
+    margin-top: 10px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -143,7 +216,8 @@ body{
     grid-column: 10/11;
 }
 .nav-left{
-    height: 5vw;
+    margin-top: 10px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -152,7 +226,8 @@ body{
     grid-column: 0/1;
 }
 .darkmode-div{
-    height: 5vw;
+    margin-top: 10px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -162,7 +237,8 @@ body{
 }
 .logoIMG{
     width: 50px;
-    height: 50px;
+    height: 50px;   
+    cursor: pointer;
 }
 .darkmode{
     width:70px;
@@ -206,17 +282,429 @@ body{
 
 
 
+@media (max-width:960px){
+
+    .item-0{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        grid-row: 3/5;
+        grid-column: 2/4;
+        background-image: linear-gradient(#353535, rgb(32, 31, 31));
+        border-radius: 10px;
+        border-width: 2px;
+        transition:0.3s;
+        display: inline-block;
+    }
+    .item-1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        grid-row: 4/6;
+        grid-column: 1/2;
+        background-image: linear-gradient(#353535, rgb(32, 31, 31));
+        border-radius: 10px;
+        border-width: 2px;
+        transition:0.3s;
+        display: inline-block;
+    }
+    .item-2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        grid-row: 5/6;
+        grid-column: 2/4;
+        background-image: linear-gradient(#353535, rgb(32, 31, 31));
+        border-radius: 10px;
+        border-width: 2px;
+        transition:0.3s;
+        display: inline-block;
+    }
+    .item-3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        grid-row: 3/4;
+        grid-column: 1/2;
+        background-image: linear-gradient(#353535, rgb(32, 31, 31));
+        border-radius: 10px;
+        border-width: 2px;
+        transition:0.3s;
+        display: inline-block;
+    }
+    .item-4{
+        display: flex; /* Change this to flex */
+        flex-direction: column; /* Stack the children vertically */
+        justify-content: center; /* Vertically center the items */
+        align-items: center; /* Horizontally center the items */
+        height: 100%; /* Add this to set a specific height */
+        grid-row: 1/3;
+        grid-column: 1/4;
+        background-image: linear-gradient(#353535, rgb(32, 31, 31));
+        border-radius: 10px;
+        border-width: 2px;
+        transition:0.3s;
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+
+
+    .img-0{
+        width: 20vw;
+        height: 8vw;
+        filter: invert(50%);
+        
+    }
+    .img-1{
+        width: 18vw;
+        height: 8vw;
+        filter: invert(50%);
+    }
+    .img-2{
+        width: 10vw;
+        height: 4vw;
+        filter: invert(50%);
+    }
+    .img-3{
+        width: 10vw;
+        height: 4vw;
+        filter: invert(50%);
+    }
+
+
+
+
+    .login{
+        color: white;
+        font-size:15px;
+    }
+    
+    h2{
+        font-size: 15px;
+    }
+    
+    .login-button{
+        background-color: #BB86FC;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        opacity: 0.6;
+        transition: 0.3s;
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .login-button:hover {opacity: 1}
+    
+    .login-label{
+        justify-items: center;
+        display: block;
+    }
+    
+    .login-input{
+        text-align: center;
+        height:8px;
+    }
+    
+    .login-form{
+        display: flex; /* Change this to flex */
+        flex-direction: column; /* Stack the children vertically */
+        justify-content: center; /* Vertically center the items */
+        align-items: center; /* Horizontally center the items */
+    }
+
+    .container{
+        justify-content: center;
+        margin-top: 3vw;
+        width: 100%;
+        display: grid;
+        grid-gap: 2vw;
+        grid-template-columns: 30vw 30vw 30vw;
+        grid-template-rows: 12vw 12vw 12vw 12vw 12vw;
+    }
+
+
+
+
+    .darkmode{
+        width:70px;
+        height:40px;
+        position: relative;
+        display: block;
+        background: #ebebeb;
+        border-radius: 20px;
+        box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+        cursor: pointer;
+    }
+    .darkmode:after {
+        content: "";
+        width:20px;
+        height: 20px;
+        position: absolute;
+        top:10px;
+        left:10px;
+        background: linear-gradient(180deg,#ffcc89,#d8860b);
+        border-radius: 180px;
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+      }
+      #darkmode-toggle {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+      }
+      #darkmode-toggle:checked + .darkmode {
+        background: #242424;
+      }
+      #darkmode-toggle:checked + .darkmode:after {
+        left:10px;
+        transform: translateX(120%);
+        background: linear-gradient(180deg,#777,#3a3a3a);
+      }
+      .darkmode, .darkmode:after {
+        transition: 0.3s
+      }
+      .darkmode-div{
+        margin-top: 10px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-row: 2/1;
+        grid-column: 9/11;
+    }
+
+
+}
 
 
 
 
 
+@media (max-width:570px) {
+
+    
+    .item-0{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        grid-row: 4/6;
+        grid-column: 2/4;
+        background-image: linear-gradient(#353535, rgb(32, 31, 31));
+        border-radius: 10px;
+        border-width: 2px;
+        transition:0.3s;
+        display: inline-block;
+    }
+    .item-1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        grid-row: 6/8;
+        grid-column: 1/3;
+        background-image: linear-gradient(#353535, rgb(32, 31, 31));
+        border-radius: 10px;
+        border-width: 2px;
+        transition:0.3s;
+        display: inline-block;
+    }
+    .item-2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        grid-row: 6/8;
+        grid-column: 3/4;
+        background-image: linear-gradient(#353535, rgb(32, 31, 31));
+        border-radius: 10px;
+        border-width: 2px;
+        transition:0.3s;
+        display: inline-block;
+    }
+    .item-3{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        grid-row: 4/6;
+        grid-column: 1/2;
+        background-image: linear-gradient(#353535, rgb(32, 31, 31));
+        border-radius: 10px;
+        border-width: 2px;
+        transition:0.3s;
+        display: inline-block;
+    }
+    .item-4{
+        display: flex; /* Change this to flex */
+        flex-direction: column; /* Stack the children vertically */
+        justify-content: center; /* Vertically center the items */
+        align-items: center; /* Horizontally center the items */
+        height: 100%; /* Add this to set a specific height */
+        grid-row: 1/4;
+        grid-column: 1/4;
+        background-image: linear-gradient(#353535, rgb(32, 31, 31));
+        border-radius: 10px;
+        border-width: 2px;
+        transition:0.3s;
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+
+
+    .img-0{
+        display: none;
+        width: 20vw;
+        height: 8vw;
+        filter: invert(50%);
+        
+    }
+    .img-1{
+        display: none;
+        width: 18vw;
+        height: 8vw;
+        filter: invert(50%);
+    }
+    .img-2{
+        display: none;
+        width: 10vw;
+        height: 4vw;
+        filter: invert(50%);
+    }
+    .img-3{
+        display: none;
+        width: 10vw;
+        height: 4vw;
+        filter: invert(50%);
+    }
 
 
 
 
+    .login{
+        color: white;
+        font-size:15px;
+    }
+    
+    h2{
+        font-size: 15px;
+    }
+    
+    .login-button{
+        background-color: #BB86FC;
+        border: none;
+        color: white;
+        padding: 10px 16px;
+        font-size: 10px;
+        margin: 4px 2px;
+        opacity: 0.6;
+        transition: 0.3s;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    .login-button:hover {opacity: 1}
+    
+    .login-label{
+        justify-items: center;
+        display: block;
+    }
+    
+    .login-input{
+        text-align: center;
+        height:8px;
+    }
+    
+    .login-form{
+        display: flex; /* Change this to flex */
+        flex-direction: column; /* Stack the children vertically */
+        justify-content: center; /* Vertically center the items */
+        align-items: center; /* Horizontally center the items */
+    }
+
+    .container{
+        justify-content: center;
+        margin-top: 3vw;
+        width: 100%;
+        display: grid;
+        grid-gap: 2vw;
+        grid-template-columns: 30vw 30vw 30vw;
+        grid-template-rows: 12vw 12vw 12vw 12vw 12vw 12vw 12vw;
+    }
+    .logoIMG{
+        width: 40px;
+        height: 40px;   
+        cursor: pointer;
+    }
 
 
+
+    .darkmode{
+        width:70px;
+        height:40px;
+        position: relative;
+        display: block;
+        background: #ebebeb;
+        border-radius: 20px;
+        box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+        cursor: pointer;
+    }
+    .darkmode:after {
+        content: "";
+        width:20px;
+        height: 20px;
+        position: absolute;
+        top:10px;
+        left:10px;
+        background: linear-gradient(180deg,#ffcc89,#d8860b);
+        border-radius: 180px;
+        box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+      }
+      #darkmode-toggle {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+      }
+      #darkmode-toggle:checked + .darkmode {
+        background: #242424;
+      }
+      #darkmode-toggle:checked + .darkmode:after {
+        left:10px;
+        transform: translateX(120%);
+        background: linear-gradient(180deg,#777,#3a3a3a);
+      }
+      .darkmode, .darkmode:after {
+        transition: 0.3s
+      }
+      .darkmode-div{
+        margin-top: 10px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-row: 2/1;
+        grid-column: 9/11;
+    }
+
+}
 
 
 
@@ -241,7 +729,15 @@ body{
   body.light-mode {
     background-color: #f5f5f5;
 }
-
+body.light-mode footer{
+    background-image: linear-gradient(#f5f5f5, #8a8888);
+}
+body.light-mode .footer-a{
+    color: #000;
+}
+body.light-mode p{
+    color: #000;
+}
 body.light-mode .item-0,
 body.light-mode .item-1,
 body.light-mode .item-2,
@@ -264,7 +760,7 @@ body.light-mode .login-button {
 }
 
 body.light-mode header {
-    background-color: #ffffff;
+    background-color: #ebebeb;
 }
 
 body.light-mode .darkmode {
@@ -274,4 +770,10 @@ body.light-mode .darkmode {
 
 body.light-mode .darkmode:after {
     background: linear-gradient(180deg,#ffcc89,#d8860b);
+}
+body.light-mode .logoIMG{
+    width: 40px;
+    height: 40px;   
+    cursor: pointer;
+    filter: invert(50%);
 }

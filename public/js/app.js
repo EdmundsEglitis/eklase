@@ -18,6 +18,12 @@ window.onload = function() {
     divItem3.addEventListener('click', (e) => {
         window.location="/";
     });
+    //logo
+    const logo = document.getElementById("logo");
+    logo.addEventListener('click', (e) => {
+        window.location="/";
+    });
+    //end
 
     //darkmode
     var darkmode = document.cookie.replace(/(?:(?:^|.*;\s*)darkmode\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "true";

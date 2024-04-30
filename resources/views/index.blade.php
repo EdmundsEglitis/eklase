@@ -11,25 +11,27 @@
         <h1>POSTS</h1>
     <div class="container">
         @foreach($news as $new)
-            <div id="divItem-{{$loop->index}}" class="item-{{$loop->index}}"><h2 class="card-title"> {{$new->title}} </h2></div>
+            <div id="divItem-{{$loop->index}}" class="item-{{$loop->index}}">
+                <h2 class="card-title"> {{$new->title}} </h2>
+                <img class="img-{{$loop->index}}" src="/IMGS/{{$new->imageURL}}">
+            </div>
         @endforeach
         <div class="item-4">
 
-        <form method="POST" action="/login">
-      @csrf
-      <label>
-          <p class="login">Personas kods</span>
-          <br><br>
-          <input name="presonas-kods">
-      </label>
-      <label>
-          <p class="login">Parole</p>
-          <input type="password" name="pa">
-      </label>
-      <br><br>
-      <button class="login-button">Pieslēgties</button>
-    </form>
+        <form class="login-form" method="post" action="/">
+    @csrf
+    <label class="login-label">
+        <span class="login">Epasts:</span>
+        <input class="login-input"  name="email">
+    </label>
+    <label class="login-label">
+        <span class="login">Parole:</span>
+        <input class="login-input" type="password" name="password">
+    </label>
+    <button class="login-button">Pieslēgties</button>
+</form>
         </div>
     </div>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
+@include('footer')
