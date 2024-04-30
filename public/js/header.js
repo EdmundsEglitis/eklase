@@ -1,24 +1,6 @@
 window.onload = function() {
-    const divItem0 = document.getElementById("divItem-0");
-    divItem0.addEventListener('click', (e) => {
-        window.location="/";
-    });
 
-    const divItem1 = document.getElementById("divItem-1");
-    divItem1.addEventListener('click', (e) => {
-        window.location="/";
-    });
 
-    const divItem2 = document.getElementById("divItem-2");
-    divItem2.addEventListener('click', (e) => {
-        window.location="/";
-    });
-
-    const divItem3 = document.getElementById("divItem-3");
-    divItem3.addEventListener('click', (e) => {
-        window.location="brivlaiki";
-    });
-    //logo
     const logos = document.getElementById("logo");
     logos.addEventListener('click', (e) => {
         window.location="/";
@@ -40,4 +22,3 @@ function toggleDarkMode() {
     date.setFullYear(date.getFullYear() + 1);
     document.cookie = "lightmode=" + body.classList.contains("light-mode") + "; expires=" + date.toUTCString() + "; path=/; Secure";
 }
-//end

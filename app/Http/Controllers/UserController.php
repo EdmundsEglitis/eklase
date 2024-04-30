@@ -31,4 +31,20 @@ class UserController extends Controller
         return redirect("/");
     }
 
+    public function login() {
+        return view("/");
+    }
+
+    public function signin(Request $request) {
+        $request->validate([
+            "username" => ["required"],
+            "password" => ["required"]
+        ]);
+        if (auth()->attempt(["name" => $request->username,
+                             "password" => $request->password])) {
+            return redirect("/");
+        }
+    }
+
+
 }

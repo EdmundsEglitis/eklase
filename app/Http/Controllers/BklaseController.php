@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 
 class BklaseController extends Controller
 {
-    public function index(){
-        $news=News::all();
-
-        return view("bklase", ["news" => $news]);
-
+    public function __invoke(){
+        return view('bklase',[
+            'user' => auth()->user()
+        ]);
     }
 }

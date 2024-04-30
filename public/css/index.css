@@ -277,7 +277,27 @@ margin-top: auto;
   .darkmode, .darkmode:after {
     transition: 0.3s
   }
-
+  .brivdienas-h2{
+    color: white;
+  }
+  .brivdienas-h22{
+    color: white;
+    text-align: center;
+  }
+  .brivdienas-h3{
+    color: white;
+  }
+  .brivdienas{
+    display: flex; /* Change this to flex */
+        flex-direction: column; /* Stack the children vertically */
+        justify-content: center; /* Vertically center the items */
+        align-items: center; /* Horizontally center the items */
+        border-radius:20 ;
+        border-color: white;
+        border-width:2px;
+        border-style: solid;
+    
+  }
 
 
 
@@ -777,3 +797,24 @@ body.light-mode .logoIMG{
     cursor: pointer;
     filter: invert(50%);
 }
+body.light-mode .brivdienas-h2{
+    color: black;
+  }
+  body.light-mode .brivdienas-h22{
+    color: black;
+    text-align: center;
+  }
+  body.light-mode .brivdienas-h3{
+    color: black;
+  }
+  body.light-mode .brivdienas{
+    display: flex; /* Change this to flex */
+        flex-direction: column; /* Stack the children vertically */
+        justify-content: center; /* Vertically center the items */
+        align-items: center; /* Horizontally center the items */
+        border-radius:20 ;
+        border-color: black;
+        border-width:2px;
+        border-style: solid;
+    
+  }

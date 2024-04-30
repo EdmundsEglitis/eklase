@@ -8,6 +8,7 @@
                 <label class="darkmode" for="darkmode-toggle"></label>
             </div>
             <a href="/register">register</a>
+            <a href="/logout">logout</a>
         </nav>
     </header>
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/header.js') }}"></script>

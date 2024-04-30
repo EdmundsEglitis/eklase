@@ -27,5 +27,13 @@ class IndexController extends Controller
             return "failed";
         }
     }
+    
+    public function logout() {
+        auth()->logout();
 
+        return redirect("/");
+    }
+    public function brivlaiki() {
+        return view("brivdienas");
+    }
 }
