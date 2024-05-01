@@ -6,6 +6,55 @@ body{
     min-height: 100vh;
 
 }
+#register{
+        margin-top: 10px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-row: 2/1;
+        grid-column: 9/10;
+        color: white;
+        font-weight: 1000;
+        border-style: solid;
+        border-width: 2px;
+        border-color: white;
+        width: 8vw;
+}
+#logout{
+        margin-top: 10px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-row: 2/1;
+        grid-column: 3/4;
+        color: white;
+        font-weight: 1000;
+        border-style: solid;
+        border-width: 2px;
+        border-color: white;
+
+        width: 8vw;
+    }
+#B-klase{
+        margin-top: 10px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-row: 2/1;
+        grid-column: 2/3;
+        color: white;
+        font-weight: 1000;
+        border-style: solid;
+        border-width: 2px;
+        border-color: white;
+        width: 8vw;
+}
 footer{
 background-image: linear-gradient(#121212, rgb(32, 31, 31));
 text-align: center;
@@ -224,6 +273,8 @@ margin-top: auto;
     text-align: center;
     grid-row: 0/1;
     grid-column: 0/1;
+    width: 4vw;
+    margin-left: 10px;
 }
 .darkmode-div{
     margin-top: 10px;
@@ -507,6 +558,23 @@ margin-top: auto;
     }
 
 
+    #register{
+        margin-top: 10px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-row: 2/1;
+        grid-column: 8/9;
+        color: white;
+        font-weight: 1000;
+        border-style: solid;
+        border-width: 2px;
+        border-color: white;
+        width: 10vw;
+}
+
 }
 
 
@@ -724,6 +792,58 @@ margin-top: auto;
         grid-column: 9/11;
     }
 
+
+
+
+    #register{
+        margin-top: 10px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-row: 2/1;
+        grid-column: 7/9;
+        color: white;
+        font-weight: 1000;
+        border-style: solid;
+        border-width: 2px;
+        border-color: white;
+        width: 15vw;
+}
+#logout{
+        margin-top: 10px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-row: 2/1;
+        grid-column: 4/6;
+        color: white;
+        font-weight: 1000;
+        border-style: solid;
+        border-width: 2px;
+        border-color: white;
+        width: 15vw;
+    }
+#B-klase{
+        margin-top: 10px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-row: 2/1;
+        grid-column: 2/4;
+        color: white;
+        font-weight: 1000;
+        border-style: solid;
+        border-width: 2px;
+        border-color: white;
+        width: 15vw;
+}
+
 }
 
 
@@ -818,3 +938,53 @@ body.light-mode .brivdienas-h2{
         border-style: solid;
     
   }
+
+
+body.light-mode #register{
+    margin-top: 10px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-row: 2/1;
+    grid-column: 7/9;
+    color: rgb(0, 0, 0);
+    font-weight: 1000;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(0, 0, 0);
+    width: 15vw;
+}
+body.light-mode #logout{
+    margin-top: 10px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-row: 2/1;
+    grid-column: 4/6;
+    color: rgb(0, 0, 0);
+    font-weight: 1000;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(0, 0, 0);
+    width: 15vw;
+}
+body.light-mode #B-klase{
+    margin-top: 10px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-row: 2/1;
+    grid-column: 2/4;
+    color: rgb(0, 0, 0);
+    font-weight: 1000;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(0, 0, 0);
+    width: 15vw;
+}

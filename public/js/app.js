@@ -31,6 +31,37 @@ window.onload = function() {
         document.body.classList.add("light-mode");
         document.getElementById("lightmode-toggle").checked = true;
     }
+
+
+//register
+const register = document.getElementById("register");
+if(register) {
+    register.addEventListener('click', (e) => {
+        console.log("Button clicked");
+        window.location="/register";
+    });
+}
+//end
+
+//logout
+const logouts = document.getElementById("logout");
+if(logouts) {
+    logouts.addEventListener('click', (e) => {
+        console.log("Button clicked");
+        window.location="/logout";
+    });
+}
+//end
+
+//bklase
+const bklase = document.getElementById("B-klase");
+if(bklase) {
+    bklase.addEventListener('click', (e) => {
+        console.log("Button clicked");
+        window.location="/bklase";
+    });
+}
+//end
 }
 
 function toggleDarkMode() {

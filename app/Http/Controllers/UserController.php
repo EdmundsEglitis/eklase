@@ -7,7 +7,8 @@ use Illuminate\Validation\Rule;
 use App\Models\User;
 
 class UserController extends Controller
-{
+{   
+
     public function create() {
         return view("create");
     }
@@ -44,6 +45,12 @@ class UserController extends Controller
                              "password" => $request->password])) {
             return redirect("/");
         }
+    }
+
+    public function logout() {
+        auth()->logout();
+
+        return redirect("/products");
     }
 
 

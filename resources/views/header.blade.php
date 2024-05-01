@@ -7,8 +7,15 @@
                 <input type="checkbox" id="darkmode-toggle" onclick="toggleDarkMode()" />
                 <label class="darkmode" for="darkmode-toggle"></label>
             </div>
-            <a href="/register">register</a>
-            <a href="/logout">logout</a>
+            @if(Auth::check() && Auth::user()->admin == 1)
+            <div id="register">register</div>
+            @endif
+            @if( Auth::check() )
+            <div id="logout">logout</div>
+            @endif
+            @if( Auth::check() )
+            <div id="B-klase">klase</div>
+            @endif
         </nav>
     </header>
     <script src="{{ asset('js/header.js') }}"></script>

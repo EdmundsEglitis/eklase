@@ -1,20 +1,43 @@
 window.onload = function() {
-
-
     const logos = document.getElementById("logo");
     logos.addEventListener('click', (e) => {
         window.location="/";
     });
     //end
-
     //darkmode
     var darkmode = document.cookie.replace(/(?:(?:^|.*;\s*)darkmode\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "true";
     if (darkmode) {
         document.body.classList.add("light-mode");
         document.getElementById("lightmode-toggle").checked = true;
     }
+//register
+const register = document.getElementById("register");
+if(register) {
+    register.addEventListener('click', (e) => {
+        console.log("Button clicked");
+        window.location="/register";
+    });
 }
-
+//end
+//logout
+const logouts = document.getElementById("logout");
+if(logouts) {
+    logouts.addEventListener('click', (e) => {
+        console.log("Button clicked");
+        window.location="/logout";
+    });
+}
+//end
+//bklase
+const bklase = document.getElementById("B-klase");
+if(bklase) {
+    bklase.addEventListener('click', (e) => {
+        console.log("Button clicked");
+        window.location="/bklase";
+    });
+}
+//end
+}
 function toggleDarkMode() {
     var body = document.body;
     body.classList.toggle("light-mode");
