@@ -7,6 +7,7 @@
                 <input type="checkbox" id="darkmode-toggle" onclick="toggleDarkMode()" />
                 <label class="darkmode" for="darkmode-toggle"></label>
             </div>
+            <div id="register">register</div>
             @if(Auth::check() && Auth::user()->admin == 1)
             <div id="register">register</div>
             @endif

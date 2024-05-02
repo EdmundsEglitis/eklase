@@ -25,6 +25,22 @@
     border-color: white;
     width: 12vw;
 }
+#delete-lessons{    
+    margin-top: 10px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    grid-row: 2/1;
+    grid-column: 5/6;
+    color: white;
+    font-weight: 1000;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white;
+    width: 12vw;
+}
 #update-lessons{    
     margin-top: 10px;
     height: 50px;
@@ -169,6 +185,22 @@
         text-align: center;
         grid-row: 2/1;
         grid-column: 1/2;
+        color: white;
+        font-weight: 1000;
+        border-style: solid;
+        border-width: 2px;
+        border-color: white;
+        width: 12vw;
+    }
+    #delete-lessons{    
+        margin-top: 10px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        grid-row: 2/1;
+        grid-column: 5/6;
         color: white;
         font-weight: 1000;
         border-style: solid;

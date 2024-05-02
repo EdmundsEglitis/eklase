@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string("lesson");
             $table->string("plan");
             $table->string("homework");
-            $table->integer("group-id");
             $table->binary("day", 5);
+            $table->string('group_id')->constrained('users', 'group-id');
+            $table->timestamps();
         });
     }
 

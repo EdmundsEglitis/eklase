@@ -26,11 +26,12 @@ window.onload = function() {
     //end
 
     //darkmode
-    var darkmode = document.cookie.replace(/(?:(?:^|.*;\s*)darkmode\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "true";
-    if (darkmode) {
-        document.body.classList.add("light-mode");
-        document.getElementById("lightmode-toggle").checked = true;
-    }
+//darkmode
+var darkmode = document.cookie.replace(/(?:(?:^|.*;\s*)lightmode\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "true";
+if (darkmode) {
+    document.body.classList.add("light-mode");
+    document.getElementById("lightmode-toggle").checked = true;
+}
 
 
 //register

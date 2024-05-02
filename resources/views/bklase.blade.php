@@ -14,6 +14,7 @@
     @if($user->admin == 1)
     <div class="admin-dash">
         <div id="create-lessons">Veidot stundu sarakstu</div>
+        <div id="delete-lessons">Dzest stundu sarakstu</div>
         <div id="update-lessons">Labot stundu sarakstu</div>
         <div id="gradding">Izlikt aztīmes</div>
         <div id="view-lessons">view all lessons</div>

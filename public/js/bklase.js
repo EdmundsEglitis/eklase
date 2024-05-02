@@ -62,6 +62,11 @@ if(studentgrades) {
                 console.log("Button clicked");
                 window.location="/create-lessons";
             });
+            const dlessons = document.getElementById("delete-lessons");
+            dlessons.addEventListener('click', (e) => {
+                console.log("Button clicked");
+                window.location="/delete-lessons";
+            });
             const ulessons = document.getElementById("update-lessons");
             ulessons.addEventListener('click', (e) => {
                 console.log("Button clicked");
