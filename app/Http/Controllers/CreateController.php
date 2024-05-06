@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Lesson;
+use App\Models\User;
+use App\Models\All_lessons;
+use App\Models\Grade;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CreateController extends Controller
 {
@@ -66,13 +70,110 @@ class CreateController extends Controller
     
 
 
-    public function grade()
-    {
-        // Logic for grading lessons
+    public function viewAll(){
+        $lessons = Lesson::all();
+        return view('/Admin/show-all', compact('lessons'));
     }
 
-    public function viewAll()
-    {
-        // Logic for viewing all lessons
+    public function specific($groupId)
+    {        
+        // Fetch lessons for the specified group ID
+        $lessons = Lesson::where('group_id', $groupId)->get();
+        // Pass the lessons and group ID to the view
+        return view('/Admin/view_group_lessons', compact('lessons', 'groupId'));
     }
+    public function updateGroup(Request $request, $groupId, $day){
+        $lessons = Lesson::where('group_id', $groupId)
+                            ->where('day', $day)
+                            ->get();
+        return view('/Admin/update-group', compact('lessons', 'groupId', 'day'));
+    }
+
+    public function updateLessons(Request $request)
+    {
+        $lessonData = $request->input('lessons');
+        $groupId=$request["group-id"];
+    
+            DB::beginTransaction();
+
+            foreach ($lessonData as $lessonId => $data) {
+                $lesson = Lesson::find($lessonId);
+                $lesson->lesson = $data['lesson'];
+                $lesson->plan = $data['plan'];
+                $lesson->homework = $data['homework'];
+
+                $lesson->save();
+            }
+            DB::commit();
+            return redirect("/show-all");
+}
+
+public function grade(Request $request)
+{
+    
+    // Check if the request is a GET request with query parameters
+    if ($request->isMethod('get') && $request->filled('group-id') && $request->filled('lesson_id')) {
+        // Retrieve query parameters from the request
+        $groupId = $request->query('group-id');
+        $lessonId = $request->query('lesson_id');
+
+        // Fetch students based on the selected group
+        $students = User::where('group-id', $groupId)->get();
+
+
+        $usersAttributes = $students->map(function ($user) {
+            return $user->getAttributes();
+        });
+
+
+
+
+    $lessonNames = All_lessons::where('lessons', $lessonId)->first();
+    $lessonName = $lessonNames->getAttributes();
+
+        // Pass the students, group ID, and lesson ID to the view
+        return view('/Admin/grade-students', compact('usersAttributes', 'groupId', 'lessonName', "lessonId"));
+    } else {
+        // Handle other HTTP methods or requests without query parameters
+        // For now, you can return a redirect or an error message
+        return view('/Admin/grade-students');
+    }
+}
+
+
+
+
+
+
+public function saveGrades(Request $request)
+{
+    // Retrieve the lesson ID from the request
+    $lessonId = $request->input('lesson_id');
+
+    // Iterate over the form input to extract the student IDs and grades
+    foreach ($request->input() as $key => $value) {
+        // Check if the input key starts with 'grade'
+        if (strpos($key, 'grade') === 0) {
+            // Extract the student ID from the input name
+            $studentId = substr($key, 5);
+
+            // Validate the grade value (optional)
+            $grade = intval($value);
+            if ($grade < 0 || $grade > 10) {
+                // Handle invalid grade value (e.g., display an error message)
+                return redirect()->back()->with('error', 'Invalid grade value for student ' . $studentId);
+            }
+
+            // Save the grade to the database
+            Grade::create([
+                'student_id' => $studentId,
+                'lesson_id' => $lessonId,
+                'grade' => $grade,
+            ]);
+        }
+    }
+
+    // Redirect back with a success message
+    return redirect()->back()->with('success', 'Grades saved successfully');
+}
 }

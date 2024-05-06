@@ -25,13 +25,7 @@ window.onload = function() {
     });
     //end
 
-    //darkmode
-//darkmode
-var darkmode = document.cookie.replace(/(?:(?:^|.*;\s*)lightmode\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "true";
-if (darkmode) {
-    document.body.classList.add("light-mode");
-    document.getElementById("lightmode-toggle").checked = true;
-}
+
 
 
 //register
@@ -65,11 +59,5 @@ if(bklase) {
 //end
 }
 
-function toggleDarkMode() {
-    var body = document.body;
-    body.classList.toggle("light-mode");
-    var date = new Date();
-    date.setFullYear(date.getFullYear() + 1);
-    document.cookie = "lightmode=" + body.classList.contains("light-mode") + "; expires=" + date.toUTCString() + "; path=/; Secure";
-}
+
 //end

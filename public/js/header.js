@@ -3,13 +3,7 @@ window.onload = function() {
     logos.addEventListener('click', (e) => {
         window.location="/";
     });
-    //end
-    //darkmode
-    var darkmode = document.cookie.replace(/(?:(?:^|.*;\s*)darkmode\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "true";
-    if (darkmode) {
-        document.body.classList.add("light-mode");
-        document.getElementById("lightmode-toggle").checked = true;
-    }
+
 //register
 const register = document.getElementById("register");
 if(register) {
@@ -38,10 +32,31 @@ if(bklase) {
 }
 //end
 }
+// Function to set a cookie
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+// Check cookie for dark mode preference
+var lightmode = document.cookie.replace(/(?:(?:^|.*;\s*)lightmode\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "true";
+if (!lightmode) {
+    document.body.classList.add("light-mode"); // Default mode is dark mode
+}
+
+// Function to toggle dark mode
 function toggleDarkMode() {
-    var body = document.body;
-    body.classList.toggle("light-mode");
-    var date = new Date();
-    date.setFullYear(date.getFullYear() + 1);
-    document.cookie = "lightmode=" + body.classList.contains("light-mode") + "; expires=" + date.toUTCString() + "; path=/; Secure";
+    var lightmodeToggle = document.getElementById("darkmode-toggle");
+    if (lightmodeToggle.checked) {
+        document.body.classList.remove("light-mode");
+        setCookie("lightmode", "true", 30); // Set cookie for 30 days
+    } else {
+        document.body.classList.add("light-mode");
+        setCookie("lightmode", "false", 30); // Set cookie for 30 days
+    }
 }

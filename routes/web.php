@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BklaseController; 
 use App\Http\Controllers\CreateController; 
 use App\Http\Controllers\ViewController; 
+use App\Http\Controllers\ShowController; 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,13 +27,20 @@ Route::post("/", [IndexController::class, "signin"]); // Ļoti nepareizi, labāk
 Route::get("/bklase", [BklaseController::class, "__invoke"]);
 
 Route::get("/create-lessons", [CreateController::class, "create"]);
+
 Route::post("/create-lessons", [CreateController::class, "store"]);
+
 Route::get("/delete-lessons", [CreateController::class, "view"]);
+
 Route::post("/delete-lessons", [CreateController::class, "delete"]);
-Route::get("/update-lessons", [CreateController::class, "update"]);
-Route::get("/gradding", [CreateController::class, "grade"]);
-Route::get("/view-all-lessons", [CreateController::class, "viewAll"]);
-Route::get("/view-all-lessons{groupId", [CreateController::class, "viewSpecific"]);
+
+Route::get("/update-group/{groupId}/{day}", [CreateController::class, "updateGroup"]);
+Route::post("/update-group", [CreateController::class, "updateLessons"]);
+Route::get("/grade-students", [CreateController::class, "grade"]);
+Route::post("/save-grades", [CreateController::class, "saveGrades"]);
+
+Route::get("/show-all", [CreateController::class, "viewAll"]);
+Route::get("/view/{groupId}", [CreateController::class, "specific"]);
 
 Route::get("/view-lessons", [ViewController::class, "viewLessons"]);
-Route::get("/view-grades/{userId", [ViewController::class, "viewGrades"]);
+Route::get("/view-grades", [ViewController::class, "viewGrades"]);

@@ -4,12 +4,7 @@ window.onload = function() {
         window.location="/";
     });
     //end
-    //darkmode
-    var darkmode = document.cookie.replace(/(?:(?:^|.*;\s*)darkmode\s*\=\s*([^;]*).*$)|^.*$/, "$1") === "true";
-    if (darkmode) {
-        document.body.classList.add("light-mode");
-        document.getElementById("lightmode-toggle").checked = true;
-    }
+
 //register
 const register = document.getElementById("register");
 if(register) {
@@ -42,7 +37,7 @@ const studentlessons = document.getElementById("student-lessons");
 if(studentlessons) {
     studentlessons.addEventListener('click', (e) => {
         console.log("Button clicked");
-        window.location="/view-lessons";
+        window.location="/bklase";
     });
 }
 
@@ -67,28 +62,15 @@ if(studentgrades) {
                 console.log("Button clicked");
                 window.location="/delete-lessons";
             });
-            const ulessons = document.getElementById("update-lessons");
-            ulessons.addEventListener('click', (e) => {
-                console.log("Button clicked");
-                window.location="/update-lessons";
-            });
             const gradding = document.getElementById("gradding");
             gradding.addEventListener('click', (e) => {
                 console.log("Button clicked");
-                window.location="/gradding";
+                window.location="/grade-students";
             });
             const vlessons = document.getElementById("view-lessons");
             vlessons.addEventListener('click', (e) => {
                 console.log("Button clicked");
-                window.location="/view-lessons";
+                window.location="/show-all";
             });
 
-        }
-
-        function toggleDarkMode() {
-            var body = document.body;
-            body.classList.toggle("light-mode");
-            var date = new Date();
-            date.setFullYear(date.getFullYear() + 1);
-            document.cookie = "lightmode=" + body.classList.contains("light-mode") + "; expires=" + date.toUTCString() + "; path=/; Secure";
         }

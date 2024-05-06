@@ -28,6 +28,6 @@
     <h2 class="brivdienas-h2">Vasaras brīvdienas</h2>
     <h3 class="brivdienas-h3"> 1.–8. klasēm un 10.–11. klasēm – no 2024. gada 1. jūnija līdz 31. augustam.</h3>
     </div>
-
+    <script src="{{ asset('js/header.js') }}"></script>
 </body>
 </html>
