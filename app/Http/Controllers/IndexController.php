@@ -14,18 +14,17 @@ class IndexController extends Controller
 
     }
 
-    public function signin(Request $request) {
-        $request->validate([
-            "email" => ["required"],
-            "password" => ["required"]
+    public function signin(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
+    
+        if (auth()->attempt($credentials)) {
+            return redirect()->intended('bklase');
+        }
+    
+        return redirect()->back()->withInput($request->only('email'))->withErrors([
+            'email' => 'E-pasts vai parole nav pareiza.',
         ]);
-        if (auth()->attempt(["email" => $request->email,
-                             "password" => $request->password])) {
-            return redirect("bklase");
-        }
-        else{
-            return "failed";
-        }
     }
     
     public function logout() {

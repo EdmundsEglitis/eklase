@@ -20,9 +20,12 @@
 
         <form class="login-form" method="post" action="/">
     @csrf
+    @if ($errors->any())
+        <div class="alert alert-danger"><h2 class="card-title">{{ $errors->first('email') }}</h2></div>
+    @endif
     <label class="login-label">
         <span class="login">Epasts:</span>
-        <input class="login-input"  name="email">
+        <input class="login-input" name="email" value="{{ old('email') }}">
     </label>
     <label class="login-label">
         <span class="login">Parole:</span>

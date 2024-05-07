@@ -19,11 +19,11 @@ use App\Http\Controllers\ShowController;
 */
 Route::get("/register", [UserController::class, "create"]);
 Route::post("/register", [UserController::class, "store"]);
+Route::get("/logout", [IndexController::class, "logout"]);
+Route::post("/", [IndexController::class, "signin"]);
 
 Route::get('/', [IndexController::class, "index"]);
 Route::get("/brivlaiki", [IndexController::class, "brivlaiki"]);
-Route::get("/logout", [IndexController::class, "logout"]);
-Route::post("/", [IndexController::class, "signin"]); // Ļoti nepareizi, labāk būtu login2, vēl labāk - uztaisīt atsevišķu Controller
 Route::get("/bklase", [BklaseController::class, "__invoke"]);
 
 Route::get("/create-lessons", [CreateController::class, "create"]);
