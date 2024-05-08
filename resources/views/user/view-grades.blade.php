@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Grades</title>
+    <link href="/css/dashboard.css" rel="stylesheet"/>
 </head>
 <body>
-    <h1>jūsu sekmju izraksts</h1>
-
+@include('header')
+<br>
+<br>
+<br>
+    <h2>jūsu sekmju izraksts</h2>
+    <div  class="table-container">
     <table>
     <thead>
         <tr>
@@ -28,5 +33,6 @@
         @endforeach
     </tbody>
 </table>
+</div>
 </body>
 </html>

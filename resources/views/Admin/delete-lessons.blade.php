@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="/css/delete.css" rel="stylesheet"/>
 </head>
 <body>
-<h1>Delete Lessons by Group ID</h1>
+    <br>
+    <br>
+    <br>
+<h2>Dzēst stundu sarakstu grupai</h2>
 @include('header')
 @if(session('success'))
+    <div class="center-all">
         <p style="color: green;">{{ session('success') }}</p>
     @endif
 
@@ -21,6 +26,8 @@
         <input type="text" id="group_id" name="group_id" required><br><br>
         <button type="submit">Delete Lessons</button>
     </form>
+</div>
+</div>
 
     <script src="{{ asset('js/delete.js') }}"></script>
 </body>

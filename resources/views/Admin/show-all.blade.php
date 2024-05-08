@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Lessons</title>
-    <!-- Add your CSS links here -->
+    <link href="/css/showAll.css" rel="stylesheet"/>
 </head>
 <body>
 @include('header')
     <h1>All Lessons</h1>
+    <div class="table-container">
     <table>
         <thead>
             <tr>
@@ -33,5 +34,6 @@
             @endforeach
         </tbody>
     </table>
+</div>
 </body>
 </html>

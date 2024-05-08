@@ -23,16 +23,17 @@
         <div id="student-lessons">Skatīt stundu sarakstu</div>
         <div id="student-grades">Skatīt vērtējumus</div>
     </div>
-    <h1>Welcome to Your Class Dashboard</h1>
+    <h2>Sveicināts {{ $user["group-id"]}} skolēn</h1>
     
-    <h2>Week Lessons for {{ Auth::user()->group_name }}</h2>
+    <h2>nedēļas stundu saraksts priekš {{ $user["group-id"]}}</h2>
+    <div  class="table-container">
     <table>
         <thead>
             <tr>
-                <th>Lesson</th>
-                <th>Day</th>
-                <th>Plan</th>
-                <th>Homework</th>
+                <th>Stunda</th>
+                <th>Diena</th>
+                <th>Stundas plāns</th>
+                <th>Uzdots</th>
             </tr>
         </thead>
         <tbody>
@@ -46,6 +47,7 @@
             @endforeach
         </tbody>
     </table>
+</div>
     @endif
     @endif
 

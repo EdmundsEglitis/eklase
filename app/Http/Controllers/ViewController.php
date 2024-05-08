@@ -31,7 +31,7 @@ class ViewController extends Controller{
     }
     
     
-
+    $lessonName = [];
     foreach($gradeAttributes as $gradeAttribute){
     $lessonNames = All_lessons::find($gradeAttribute["lesson_id"]);
     $lessonName[] = $lessonNames->getAttributes();

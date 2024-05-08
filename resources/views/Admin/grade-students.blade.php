@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="/css/gradding.css" rel="stylesheet"/>
 </head>
 <body>
+@include('header')
+<br>
+<br><br><br>
+<div class="center-all">
+    <div class="form-container">
     <form action="/grade-students" method="get">
     <label for="group-id">izvēlies grupu:</label>
         <select name="group-id" id="group-id" required>
@@ -15,7 +21,7 @@
             <option value="kd22">kd22</option>
             <option value="da22">da22</option>
         </select><br><br>
-        <label for="lesson_id">izvēlies grupu:</label>
+        <label for="lesson_id">izvēlies priekšmetu:</label>
         <select name="lesson_id" id="lesson_id" required>
         <option value=""> </option>
             <option value="sistemu programmēšana">sistemu programmēšana</option>
@@ -26,6 +32,8 @@
 
         <button type="submit">atvērt vērtēšanas sarakstu</button>
     </form>
+    </div>
+    <div class="table-container">
     @isset($usersAttributes)
     <form action="/save-grades" method="POST">
     @csrf
@@ -58,6 +66,8 @@
         </tbody>
     </table>
     <button type="submit">Saglabāt skolēnu atzīmes</button>
+    </div>
+    </div>
     @endisset
 
 

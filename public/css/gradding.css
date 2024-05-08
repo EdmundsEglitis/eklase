@@ -1,0 +1,125 @@
+
+
+.center-all {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 30px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+    padding:20px;
+}
+
+.centered-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.form-container,
+.table-container {
+    margin-top: 20px; /* Adjust the space between the form and table */
+}
+
+.form-container form,
+.table-container table {
+    text-align: left;
+}
+
+.form-container select,
+.form-container button,
+.table-container table {
+    margin-bottom: 10px;
+}
+
+.table-container table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-container th,
+.table-container td {
+    padding: 4px;
+    border: 1px solid black;
+    color:white
+}
+
+.table-container th {
+    background-image: linear-gradient(#353535, rgb(32, 31, 31));
+}
+label{
+    color:white
+}
+
+
+
+
+
+
+
+
+
+
+
+
+body.light-mode .center-all {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 30px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(0, 0, 0);
+    padding:20px;
+}
+
+body.light-mode .centered-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+body.light-mode .form-container,
+body.light-mode .table-container {
+    margin-top: 20px; /* Adjust the space between the form and table */
+}
+
+body.light-mode .form-container form,
+.table-container table {
+    text-align: left;
+}
+
+body.light-mode .form-container select,
+.form-container button,
+.table-container table {
+    margin-bottom: 10px;
+}
+
+body.light-mode .table-container table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+
+body.light-mode .table-container th {
+    background-image: linear-gradient(#8a8888, #ebebeb);
+}
+body.light-mode label{
+    color:black
+}
+
+body.light-mode
+.table-container td {
+    padding: 4spx;
+    border: 1px solid black;
+    color:black
+}
+body.light-mode th{
+    color: black;
+}
