@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Week Plan</title>
-    <!-- Add your CSS links here -->
+    <link href="/css/create.css" rel="stylesheet"/>
 </head>
 <body>
 @include('header')
+<br>
+<br>
+<br>
     <h1>Create Week Plan of Lessons</h1>
     <form action="/create-lessons" method="POST">
         @csrf

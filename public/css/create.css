@@ -1,0 +1,127 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+input[type="text"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #666666;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #333333;
+    color: #ffffff;
+}
+
+button[type="submit"] {
+    background-color: #BB86FC;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #cfadfa;
+}
+
+.lesson {
+    margin-bottom: 20px;
+}
+
+.lesson h2 {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.lesson label {
+    display: inline-block;
+    width: 100px;
+}
+
+.lesson input[type="text"],
+.lesson textarea {
+    width: calc(100% - 120px);
+}
+
+.lesson textarea {
+    resize: vertical;
+    background-color: #333333;
+}
+#group_id{
+    color: white;
+    background-color: #333333;
+}
+#day{
+    color: white;
+    background-color: #333333;
+}
+h1{
+    color: white;
+}
+
+
+
+
+
+
+
+
+body.light-mode form{
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+body.light-mode input[type="text"],textarea,select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #666666;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: white;
+    color: black;
+}
+body.light-mode label{
+    color: black;
+}
+body.light-mode .lesson h2{
+    color: black;
+}
+body.light-mode textarea{
+    background-color: white;
+}
+body.light-mode #group_id{
+        color: black;
+        background-color: white;
+}
+body.light-mode #day{
+    color: black;
+    background-color: white;
+}
+body.light-mode h1{
+    color: black;
+}
