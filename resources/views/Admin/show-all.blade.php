@@ -17,7 +17,7 @@
                 <th>Lesson</th>
                 <th>Plan</th>
                 <th>Homework</th>
-                <th>Group ID</th>
+                <th>Apskatīt šīs grupas stundu sarakstu</th>
                 <th>Day</th>
             </tr>
         </thead>

@@ -10,24 +10,31 @@
     <br>
     <br>
     <br>
-<h2>Dzēst stundu sarakstu grupai</h2>
-@include('header')
-@if(session('success'))
+    @include('header')
     <div class="center-all">
+<h2>Dzēst stundu sarakstu grupai</h2>
+@if(session('success'))
         <p style="color: green;">{{ session('success') }}</p>
     @endif
 
     @if(session('error'))
         <p style="color: red;">{{ session('error') }}</p>
     @endif
+    <div class="delete">
     <form action="/delete-lessons" method="POST" onsubmit="return confirmDelete()">
         @csrf
-        <label for="group_id">Group ID:</label>
-        <input type="text" id="group_id" name="group_id" required><br><br>
+        <label for="group_id">Grupas ID:</label>
+        <select name="group_id" id="group_id" required>
+            <option value="ipb22">ipb22</option>
+            <option value="ipa22">ipb22</option>
+            <option value="kd22">kd22</option>
+            <option value="da22">da22</option>
+        </select><br><br>
         <button type="submit">Delete Lessons</button>
     </form>
-</div>
-</div>
+    </div>
+
+
 
     <script src="{{ asset('js/delete.js') }}"></script>
 </body>

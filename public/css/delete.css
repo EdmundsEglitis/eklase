@@ -12,6 +12,20 @@ h2{
 label{
     color:white;
 }
+.center-all {
+    position: absolute;
+    height: 200px;
+    width:300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 30px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+    padding:20px;
+}
 
 
 body.light-mode h2{
@@ -19,4 +33,19 @@ body.light-mode h2{
 }
 body.light-mode label{
     color: black;
+}
+
+body.light-mode .center-all {
+    position: absolute;
+    height: 150px;
+    width:300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 30px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    padding:20px;
 }

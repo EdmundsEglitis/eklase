@@ -17,30 +17,34 @@ use App\Http\Controllers\ShowController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get("/register", [UserController::class, "create"]);
-Route::post("/register", [UserController::class, "store"]);
-Route::get("/logout", [IndexController::class, "logout"]);
 Route::post("/", [IndexController::class, "signin"]);
-
 Route::get('/', [IndexController::class, "index"]);
 Route::get("/brivlaiki", [IndexController::class, "brivlaiki"]);
-Route::get("/bklase", [BklaseController::class, "__invoke"]);
 
-Route::get("/create-lessons", [CreateController::class, "create"]);
+Route::middleware(['auth', 'CheckAdmin'])->group(function () {
+    Route::get("/register", [UserController::class, "create"]);
+    Route::post("/register", [UserController::class, "store"]);
+    Route::get("/create-lessons", [CreateController::class, "create"]);
+    Route::post("/create-lessons", [CreateController::class, "store"]);
 
-Route::post("/create-lessons", [CreateController::class, "store"]);
+    Route::get("/delete-lessons", [CreateController::class, "view"]);
+    Route::post("/delete-lessons", [CreateController::class, "delete"]);
 
-Route::get("/delete-lessons", [CreateController::class, "view"]);
+    Route::get("/update-group/{groupId}/{day}", [CreateController::class, "updateGroup"]);
+    Route::post("/update-group", [CreateController::class, "updateLessons"]);
+    Route::get("/grade-students", [CreateController::class, "grade"]);
+    Route::post("/save-grades", [CreateController::class, "saveGrades"]);
 
-Route::post("/delete-lessons", [CreateController::class, "delete"]);
-
-Route::get("/update-group/{groupId}/{day}", [CreateController::class, "updateGroup"]);
-Route::post("/update-group", [CreateController::class, "updateLessons"]);
-Route::get("/grade-students", [CreateController::class, "grade"]);
-Route::post("/save-grades", [CreateController::class, "saveGrades"]);
-
-Route::get("/show-all", [CreateController::class, "viewAll"]);
-Route::get("/view/{groupId}", [CreateController::class, "specific"]);
-
+    Route::get("/show-all", [CreateController::class, "viewAll"]);
+    Route::get("/view/{groupId}", [CreateController::class, "specific"]);
+});
+Route::middleware(['auth', 'CheckUser'])->group(function () {
 Route::get("/view-lessons", [ViewController::class, "viewLessons"]);
 Route::get("/view-grades", [ViewController::class, "viewGrades"]);
+Route::get("/bklase", [BklaseController::class, "__invoke"]);
+Route::get("/logout", [IndexController::class, "logout"]);
+});
+Route::get('/', function () {
+    $news = App\Models\News::all(); // Replace 'News' with your actual model name
+    return view('index', compact('news'));
+})->name('home');

@@ -42,7 +42,7 @@
 
 .table-container th,
 .table-container td {
-    padding: 4px;
+    padding: 5px;
     border: 1px solid black;
     color:white
 }
@@ -53,6 +53,7 @@
 label{
     color:white
 }
+
 
 
 

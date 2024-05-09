@@ -18,6 +18,7 @@
         <div id="gradding">Izlikt aztīmes</div>
         <div id="view-lessons">view all lessons</div>
     </div>
+    <h3>jūs esat administrātors</h3>
     @else
     <div class="student-dash">
         <div id="student-lessons">Skatīt stundu sarakstu</div>

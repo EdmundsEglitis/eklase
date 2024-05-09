@@ -6,26 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Register</title>
-    <style>
-      form {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      form button {
-        width: 100px;
-      }
-    </style>
+    <link href="/css/register.css" rel="stylesheet"/>
 </head>
 
 
 <body>
-    <h1>Register</h1>
+  @include('header')
+  <br>
+    <h2>Reģistrē lietotājus</h2>
     <form method="POST" action="/register">
       @csrf
       <label>
-          <span>name:</span>
+          <span>vārds:</span>
           <input name="username">
       </label>
       
@@ -33,18 +25,18 @@
         <p>{{$message}}</p>
       @enderror
       <label>
-          <span>group-id::</span>
+          <span>Grupas-ID:</span>
           <input name="group-id">
       </label>
       <label>
-          <span>Email:</span>
+          <span>Epasts:</span>
           <input type="email" name="email">
       </label>
       @error("email")
         <p>Muļķis! {{$message}}</p>
       @enderror
       <label>
-          <span>Password:</span>
+          <span>Parole:</span>
           <input type="password" name="password">
     </label>
 
@@ -53,7 +45,7 @@
       @enderror
 
 
-      <button>Submit</button>
+      <button>Reģistrēt</button>
     </form>
 </body>
 

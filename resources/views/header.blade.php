@@ -2,12 +2,11 @@
     <link href="/css/index.css" rel="stylesheet"/>
     <header>
         <nav class="nav-container">
-            <div id="logo" class="nav-left"><img class="logoIMG" src="IMGS/logo.svg"></div>
+            <div id="logo" class="nav-left"><img class="logoIMG" src="/IMGS/logo.svg"></div>
             <div class="darkmode-div">
                 <input type="checkbox" id="darkmode-toggle" onclick="toggleDarkMode()" />
                 <label class="darkmode" for="darkmode-toggle"></label>
             </div>
-            <div id="register">register</div>
             @if(Auth::check() && Auth::user()->admin == 1)
             <div id="register">register</div>
             @endif

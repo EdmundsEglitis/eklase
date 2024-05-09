@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group Lessons</title>
-    <!-- Add your CSS links here -->
+    <link href="/css/dashboard.css" rel="stylesheet"/>
 </head>
 <body>
 @include('header')
@@ -16,7 +16,7 @@
                 <th>Lesson</th>
                 <th>Plan</th>
                 <th>Homework</th>
-                <th>Day</th>
+                <th>EDIT</th>
             </tr>
         </thead>
         <tbody>

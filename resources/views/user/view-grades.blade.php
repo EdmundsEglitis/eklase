@@ -7,6 +7,7 @@
     <link href="/css/dashboard.css" rel="stylesheet"/>
 </head>
 <body>
+@if(Auth::check())
 @include('header')
 <br>
 <br>
@@ -35,4 +36,5 @@
 </table>
 </div>
 </body>
+@endif
 </html>

@@ -31,7 +31,10 @@ th {
 td {
     border-left: 1px solid #ddd;
 }
-
+a{
+    text-decoration: none;
+    color: white;
+}
 
 
 
@@ -58,4 +61,14 @@ body.light-mode h2{
 }
 body.light-mode thead{
     color: black;
+}
+body.light-mode a{
+    color: black;
+}
+
+
+@media (max-width:600px){
+th{
+    display: none;
+}
 }
