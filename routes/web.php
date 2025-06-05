@@ -17,6 +17,7 @@ use App\Http\Controllers\ShowController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::post("/", [IndexController::class, "signin"]);
 Route::get('/', [IndexController::class, "index"]);
 Route::get("/brivlaiki", [IndexController::class, "brivlaiki"]);

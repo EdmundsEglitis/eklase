@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Lesson;
 use App\Models\User;
-use App\Models\All_lessons;
+use App\Models\AllLesson;
 use App\Models\Grade;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -110,35 +110,28 @@ class CreateController extends Controller
 
 public function grade(Request $request)
 {
-    
-    // Check if the request is a GET request with query parameters
     if ($request->isMethod('get') && $request->filled('group-id') && $request->filled('lesson_id')) {
-        // Retrieve query parameters from the request
         $groupId = $request->query('group-id');
         $lessonId = $request->query('lesson_id');
-
+       
         // Fetch students based on the selected group
         $students = User::where('group-id', $groupId)->get();
 
-
+        // ✅ This is where you prepare data for the view
         $usersAttributes = $students->map(function ($user) {
             return $user->getAttributes();
         });
 
+        $lessonNames = AllLesson::where('lessons', $lessonId)->first();
 
+        $lessonName = $request["lesson_id"];
 
-
-    $lessonNames = All_lessons::where('lessons', $lessonId)->first();
-    $lessonName = $lessonNames->getAttributes();
-
-        // Pass the students, group ID, and lesson ID to the view
-        return view('/Admin/grade-students', compact('usersAttributes', 'groupId', 'lessonName', "lessonId"));
+        return view('/Admin/grade-students', compact('usersAttributes', 'groupId', 'lessonName', 'lessonId'));
     } else {
-        // Handle other HTTP methods or requests without query parameters
-        // For now, you can return a redirect or an error message
         return view('/Admin/grade-students');
     }
 }
+
 
 
 
@@ -149,7 +142,7 @@ public function saveGrades(Request $request)
 {
     // Retrieve the lesson ID from the request
     $lessonId = $request->input('lesson_id');
-
+    
     // Iterate over the form input to extract the student IDs and grades
     foreach ($request->input() as $key => $value) {
         // Check if the input key starts with 'grade'

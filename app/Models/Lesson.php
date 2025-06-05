@@ -8,6 +8,7 @@ class Lesson extends Model
 {
    
     protected $fillable = [
+        'id',
         'lesson',
         'plan',
         'homework',

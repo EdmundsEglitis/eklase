@@ -24,10 +24,10 @@
         <label for="lesson_id">izvēlies priekšmetu:</label>
         <select name="lesson_id" id="lesson_id" required>
         <option value=""> </option>
-            <option value="sistemu programmēšana">sistemu programmēšana</option>
-            <option value="matemaātika">matemaātika</option>
-            <option value="angļu valoda">angļu valoda</option>
-            <option value="latviešu valoda">latviešu valoda</option>
+            <option value="0">sistemu programmēšana</option>
+            <option value="1">matemaātika</option>
+            <option value="2">angļu valoda</option>
+            <option value="3">latviešu valoda</option>
         </select><br><br>
 
         <button type="submit">atvērt vērtēšanas sarakstu</button>
@@ -55,7 +55,7 @@
                 <label for="grade{{$userAttribute["id"]}}"></label>
                 <td> <input id="grade{{$userAttribute["id"]}}" type="number" name="grade{{$userAttribute["id"]}}" min="0" max="10" step="1" required></td>
 
-
+                
                 <label for="lesson_id"></label>
                 <input id="lesson_id" type="hidden" name="lesson_id" value="{{$lessonName["id"]}}">
 
